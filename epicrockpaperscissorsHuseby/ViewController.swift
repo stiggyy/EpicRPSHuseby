@@ -38,12 +38,13 @@ class person: Codable{
     }
 }
 
-struct RPSchoice{
+struct RPSchoice: Codable{
     var choseRock: Bool
     var chosePaper: Bool
     var choseScissors: Bool
 }
-class AppData {
+class AppData: Codable {
+    static let defaults = UserDefaults.standard
     static var peopleArray = [person(name: "Player", wins: 0, losses: 0, ties: 0), person(name: "Computer", wins: 0, losses: 0, ties: 0)]
     
     static var index = 0
@@ -63,6 +64,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let items = AppData.defaults.data(forKey: "peopleSet") {
+                        let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([person].self, from: items) {
+                            AppData.peopleArray = decoded
+                        }
+            
+                }
     }
     
     
@@ -78,6 +87,10 @@ class ViewController: UIViewController {
         
         if competeYay(player: pRPS, vs: cRPS){
             decideWhoWon()
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(AppData.peopleArray) {
+                AppData.defaults.set(encoded, forKey: "peopleSet")
+            }
         }
         
     }
@@ -93,6 +106,10 @@ class ViewController: UIViewController {
         
         if competeYay(player: pRPS, vs: cRPS){
             decideWhoWon()
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(AppData.peopleArray) {
+                AppData.defaults.set(encoded, forKey: "peopleSet")
+            }
         }
     }
     
@@ -108,6 +125,10 @@ class ViewController: UIViewController {
         
         if competeYay(player: pRPS, vs: cRPS){
             decideWhoWon()
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(AppData.peopleArray) {
+                AppData.defaults.set(encoded, forKey: "peopleSet")
+            }
         }
     }
     

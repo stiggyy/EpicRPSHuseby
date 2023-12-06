@@ -39,13 +39,13 @@ class ViewControllerSettings: UIViewController, UITableViewDelegate, UITableView
     
     
     @IBAction func newPersonAction(_ sender: Any) {
-        let name = personOutlet.text
+        let name = personOutlet.text ?? "John Doe"
         
-        if let x = name {
-            AppData.peopleArray.append(person(name: x, wins: 0, losses: 0, ties: 0))
+        
+        AppData.peopleArray.append(person(name: name, wins: 0, losses: 0, ties: 0))
             
         
-        }
+        
         tableViewOutlet.reloadData()
     }
     
@@ -57,6 +57,26 @@ class ViewControllerSettings: UIViewController, UITableViewDelegate, UITableView
             AppData.peopleArray[0].changeName(x)
         }
         
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(AppData.peopleArray) {
+            AppData.defaults.set(encoded, forKey: "peopleSet")
+        }
+        tableViewOutlet.reloadData()
+        
+    }
+    
+    
+    @IBAction func resetAction(_ sender: Any) {
+        
+        AppData.peopleArray.removeAll()
+        AppData.peopleArray.append(person(name: "Player", wins: 0, losses: 0, ties: 0))
+        AppData.peopleArray.append(person(name: "Computer", wins: 0, losses: 0, ties: 0))
+        
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(AppData.peopleArray) {
+            AppData.defaults.set(encoded, forKey: "peopleSet")
+        }
+        tableViewOutlet.reloadData()
     }
     
 
