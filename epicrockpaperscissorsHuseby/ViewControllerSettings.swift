@@ -9,6 +9,19 @@ import UIKit
 
 class ViewControllerSettings: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let alreadyAddedAlert = UIAlertController(title: "Deleted", message: "User profiles reset", preferredStyle: UIAlertController.Style.alert)
+    // create a cancel action
+    
+    // add the cancel action to the alertController
+    
+    
+    // create an OK action
+    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        // handle response here.
+    }
+    
+
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AppData.peopleArray.count
@@ -33,6 +46,11 @@ class ViewControllerSettings: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        alreadyAddedAlert.addAction(OKAction)
+        
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -40,6 +58,7 @@ class ViewControllerSettings: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func newPersonAction(_ sender: Any) {
         let name = personOutlet.text ?? "John Doe"
+        personOutlet.text = ""
         
         
         AppData.peopleArray.append(person(name: name, wins: 0, losses: 0, ties: 0))
@@ -52,7 +71,7 @@ class ViewControllerSettings: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func changeNameAction(_ sender: Any) {
         let name = nameOutlet.text
-        
+        nameOutlet.text = ""
         if let x = name {
             AppData.peopleArray[0].changeName(x)
         }
@@ -77,6 +96,8 @@ class ViewControllerSettings: UIViewController, UITableViewDelegate, UITableView
             AppData.defaults.set(encoded, forKey: "peopleSet")
         }
         tableViewOutlet.reloadData()
+        
+        present(alreadyAddedAlert, animated: true)
     }
     
 
