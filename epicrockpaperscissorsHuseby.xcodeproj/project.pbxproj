@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		429AC8AF2B20CBF600D1635A /* ViewControllerPersonScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429AC8AE2B20CBF600D1635A /* ViewControllerPersonScore.swift */; };
 		42B6F3272B1E2FBC00C0CF2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6F3262B1E2FBC00C0CF2E /* AppDelegate.swift */; };
 		42B6F3292B1E2FBC00C0CF2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6F3282B1E2FBC00C0CF2E /* SceneDelegate.swift */; };
 		42B6F32B2B1E2FBC00C0CF2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6F32A2B1E2FBC00C0CF2E /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		429AC8AE2B20CBF600D1635A /* ViewControllerPersonScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPersonScore.swift; sourceTree = "<group>"; };
 		42B6F3232B1E2FBC00C0CF2E /* epicrockpaperscissorsHuseby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = epicrockpaperscissorsHuseby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B6F3262B1E2FBC00C0CF2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42B6F3282B1E2FBC00C0CF2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		42B6F31A2B1E2FBC00C0CF2E = {
 			isa = PBXGroup;
 			children = (
+				429AC8AE2B20CBF600D1635A /* ViewControllerPersonScore.swift */,
 				42B6F3252B1E2FBC00C0CF2E /* epicrockpaperscissorsHuseby */,
 				42B6F33F2B1E2FBE00C0CF2E /* epicrockpaperscissorsHusebyTests */,
 				42B6F3492B1E2FBE00C0CF2E /* epicrockpaperscissorsHusebyUITests */,
@@ -274,6 +277,7 @@
 				42B6F35A2B1E323500C0CF2E /* ViewControllerVSComp.swift in Sources */,
 				42B6F3312B1E2FBC00C0CF2E /* epicrockpaperscissorsHuseby.xcdatamodeld in Sources */,
 				42B6F3272B1E2FBC00C0CF2E /* AppDelegate.swift in Sources */,
+				429AC8AF2B20CBF600D1635A /* ViewControllerPersonScore.swift in Sources */,
 				42B6F3292B1E2FBC00C0CF2E /* SceneDelegate.swift in Sources */,
 				42B6F35C2B1E329B00C0CF2E /* ViewControllerScores.swift in Sources */,
 				42B6F35E2B1E32D700C0CF2E /* ViewControllerSettings.swift in Sources */,

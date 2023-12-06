@@ -7,11 +7,33 @@
 
 import UIKit
 
-class ViewControllerScores: UIViewController {
+class ViewControllerScores: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+    
+    @IBOutlet weak var tableViewOutlet: UITableView!
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return AppData.peopleArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        cell.textLabel?.text = "\(AppData.peopleArray[indexPath.row].name)"
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toIndividualScore", sender: self)
+        AppData.index = indexPath.row
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableViewOutlet.dataSource = self
+        tableViewOutlet.delegate = self
         // Do any additional setup after loading the view.
     }
     
