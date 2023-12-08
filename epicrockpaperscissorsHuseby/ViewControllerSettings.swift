@@ -63,7 +63,11 @@ class ViewControllerSettings: UIViewController, UITableViewDelegate, UITableView
         
         AppData.peopleArray.append(person(name: name, wins: 0, losses: 0, ties: 0))
             
-        
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(AppData.peopleArray) {
+            AppData.defaults.set(encoded, forKey: "peopleSet")
+        }
+
         
         tableViewOutlet.reloadData()
     }

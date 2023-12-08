@@ -42,8 +42,15 @@ struct RPSchoice: Codable{
     var choseRock: Bool
     var chosePaper: Bool
     var choseScissors: Bool
+    
 }
 class AppData: Codable {
+    static var playable = false
+    static var indexOne = 0
+    static var indexTwo = 0
+    static var playerChoosing = 1
+    static var playerOneName = ""
+    static var playerTwoName = ""
     static let defaults = UserDefaults.standard
     static var peopleArray = [person(name: "Player", wins: 0, losses: 0, ties: 0), person(name: "Computer", wins: 0, losses: 0, ties: 0)]
     
@@ -147,6 +154,8 @@ class ViewController: UIViewController {
             AppData.peopleArray[1].addTie()
             winnerLabel.text = "Tie!"
         }
+        
+        
     }
     
     func chooseComp() -> RPSchoice{

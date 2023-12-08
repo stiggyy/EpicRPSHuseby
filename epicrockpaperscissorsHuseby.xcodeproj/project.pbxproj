@@ -21,6 +21,7 @@
 		42B6F35A2B1E323500C0CF2E /* ViewControllerVSComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6F3592B1E323500C0CF2E /* ViewControllerVSComp.swift */; };
 		42B6F35C2B1E329B00C0CF2E /* ViewControllerScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6F35B2B1E329B00C0CF2E /* ViewControllerScores.swift */; };
 		42B6F35E2B1E32D700C0CF2E /* ViewControllerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B6F35D2B1E32D700C0CF2E /* ViewControllerSettings.swift */; };
+		42D5EA022B22188000F13A8A /* ViewControllerChoosePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D5EA012B22188000F13A8A /* ViewControllerChoosePlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		42B6F3592B1E323500C0CF2E /* ViewControllerVSComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVSComp.swift; sourceTree = "<group>"; };
 		42B6F35B2B1E329B00C0CF2E /* ViewControllerScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerScores.swift; sourceTree = "<group>"; };
 		42B6F35D2B1E32D700C0CF2E /* ViewControllerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSettings.swift; sourceTree = "<group>"; };
+		42D5EA012B22188000F13A8A /* ViewControllerChoosePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerChoosePlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		42B6F31A2B1E2FBC00C0CF2E = {
 			isa = PBXGroup;
 			children = (
+				42D5EA012B22188000F13A8A /* ViewControllerChoosePlayer.swift */,
 				429AC8AE2B20CBF600D1635A /* ViewControllerPersonScore.swift */,
 				42B6F3252B1E2FBC00C0CF2E /* epicrockpaperscissorsHuseby */,
 				42B6F33F2B1E2FBE00C0CF2E /* epicrockpaperscissorsHusebyTests */,
@@ -275,6 +278,7 @@
 			files = (
 				42B6F32B2B1E2FBC00C0CF2E /* ViewController.swift in Sources */,
 				42B6F35A2B1E323500C0CF2E /* ViewControllerVSComp.swift in Sources */,
+				42D5EA022B22188000F13A8A /* ViewControllerChoosePlayer.swift in Sources */,
 				42B6F3312B1E2FBC00C0CF2E /* epicrockpaperscissorsHuseby.xcdatamodeld in Sources */,
 				42B6F3272B1E2FBC00C0CF2E /* AppDelegate.swift in Sources */,
 				429AC8AF2B20CBF600D1635A /* ViewControllerPersonScore.swift in Sources */,
