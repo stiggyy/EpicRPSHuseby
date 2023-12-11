@@ -99,6 +99,7 @@ class ViewControllerVSHuman: UIViewController {
                 decideWhoWon()
             }
             whichPlayer = 1
+            prepareForNewGame()
         }
     }
     
@@ -118,6 +119,7 @@ class ViewControllerVSHuman: UIViewController {
                 decideWhoWon()
             }
             whichPlayer = 1
+            prepareForNewGame()
         }
     }
     
@@ -136,9 +138,35 @@ class ViewControllerVSHuman: UIViewController {
                 decideWhoWon()
             }
             whichPlayer = 1
+            prepareForNewGame()
+            
             
             
         }
+    }
+    
+    
+    @IBAction func newGameAction(_ sender: Any) {
+        
+        playerChoiceOutlet.text = "Player One's Choice:"
+        playertwoOutlet.text = "Pick player two"
+        playerOneOutlet.text = "Pick player one"
+        
+    }
+    
+    
+    
+    func prepareForNewGame(){
+        paperOutlet.isEnabled = false
+        scissorsOutlet.isEnabled = false
+        rockOutlet.isEnabled = false
+        newGameButtonOutlet.isEnabled = true
+        AppData.playerChoosing = 1
+        AppData.playable = false
+        AppData.playerOneName = ""
+        AppData.playerTwoName = ""
+        AppData.indexOne = 0
+        AppData.indexTwo = 0
     }
     
     func decideWhoWon(){

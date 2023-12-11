@@ -57,6 +57,8 @@ class ViewControllerChoosePlayer: UIViewController, UITableViewDelegate, UITable
             AppData.indexTwo = AppData.index
             
             AppData.playable = true
+            
+            AppData.playerChoosing = 1
         }
        // AppData.index = indexPath.row
     }

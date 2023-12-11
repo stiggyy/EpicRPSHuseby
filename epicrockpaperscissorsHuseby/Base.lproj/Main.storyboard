@@ -100,6 +100,9 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.down.on.square.fill" catalog="system"/>
                             </button>
+                            <connections>
+                                <action selector="sortWinsAction:" destination="ZBb-TU-QWe" id="8bP-dS-8dO"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -388,6 +391,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="New Game?"/>
+                                <connections>
+                                    <action selector="newGameAction:" destination="CXR-kr-O4K" eventType="touchUpInside" id="5os-Uc-hmv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ib4-90-jQa"/>
@@ -526,6 +532,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="vGY-r3-50k"/>
         <segue reference="tSM-GE-tQd"/>
     </inferredMetricsTieBreakers>
     <resources>

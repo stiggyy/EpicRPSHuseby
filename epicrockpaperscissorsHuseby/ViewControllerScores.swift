@@ -40,6 +40,14 @@ class ViewControllerScores: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidAppear(_ animated: Bool) {
         tableViewOutlet.reloadData()
     }
+    
+    
+    @IBAction func sortWinsAction(_ sender: Any) {
+        AppData.peopleArray = AppData.peopleArray.sorted(by: { $0.wins < $1.wins })
+
+        tableViewOutlet.reloadData()
+    }
+    
 
     /*
     // MARK: - Navigation
