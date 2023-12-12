@@ -20,12 +20,22 @@ class ViewControllerChoosePlayer: UIViewController, UITableViewDelegate, UITable
         tableViewOutlet.dataSource = self
         tableViewOutlet.delegate = self
         peopleNoComputer.remove(at: 1)
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        var y = 0
+        peopleNoComputer = AppData.peopleArray
+        
+        for x in peopleNoComputer {
+            
+            if x.name == "Computer" {
+                break
+            }
+            y = y + 1
+        }
+        peopleNoComputer.remove(at: y)
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return peopleNoComputer.count

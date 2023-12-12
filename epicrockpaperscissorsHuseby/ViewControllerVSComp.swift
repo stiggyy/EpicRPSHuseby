@@ -9,6 +9,9 @@ import UIKit
 
 class ViewControllerVSHuman: UIViewController {
     
+    var playerOneChoiceString = ""
+    var playerTwoChoiceString = ""
+    
     var playerwins = false
     var vswins = false
     var tie = false
@@ -90,10 +93,11 @@ class ViewControllerVSHuman: UIViewController {
         if whichPlayer == 1 {
             RPSp1.chosePaper = true
             playerChoiceOutlet.text = "Player Two's Choice:"
-            playerOneChoseOutlet.text = "Player one chose: Paper"
+            playerOneChoiceString = "Player one chose: Paper"
             whichPlayer = 2
         } else if whichPlayer == 2 {
             RPSp2.chosePaper = true
+            playerOneChoseOutlet.text = playerOneChoiceString
             playerTwoChoseOutlet.text = "Player two chose: Paper"
             if competeYay(player: RPSp1, vs: RPSp2){
                 decideWhoWon()
@@ -110,10 +114,11 @@ class ViewControllerVSHuman: UIViewController {
         if whichPlayer == 1 {
             RPSp1.choseScissors = true
             playerChoiceOutlet.text = "Player Two's Choice:"
-            playerOneChoseOutlet.text = "Player one chose: Scissors"
+            playerOneChoiceString = "Player one chose: Scissors"
             whichPlayer = 2
         } else if whichPlayer == 2 {
             RPSp2.choseScissors = true
+            playerOneChoseOutlet.text = playerOneChoiceString
             playerTwoChoseOutlet.text = "Player two chose: Scissors"
             if competeYay(player: RPSp1, vs: RPSp2){
                 decideWhoWon()
@@ -129,10 +134,11 @@ class ViewControllerVSHuman: UIViewController {
         if whichPlayer == 1 {
             RPSp1.choseRock = true
             playerChoiceOutlet.text = "Player Two's Choice:"
-            playerOneChoseOutlet.text = "Player one chose: Rock"
+            playerOneChoiceString = "Player one chose: Rock"
             whichPlayer = 2
         } else if whichPlayer == 2 {
             RPSp2.choseRock = true
+            playerOneChoseOutlet.text = playerOneChoiceString
             playerTwoChoseOutlet.text = "Player two chose: Rock"
             if competeYay(player: RPSp1, vs: RPSp2){
                 decideWhoWon()

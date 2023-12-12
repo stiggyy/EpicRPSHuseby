@@ -18,7 +18,7 @@ class ViewControllerScores: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-        cell.textLabel?.text = "\(AppData.peopleArray[indexPath.row].name)"
+        cell.textLabel?.text = "\(AppData.peopleArray[indexPath.row].name) - \(AppData.peopleArray[indexPath.row].wins) win(s)"
         
         return cell
     }
@@ -43,12 +43,36 @@ class ViewControllerScores: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func sortWinsAction(_ sender: Any) {
-        AppData.peopleArray = AppData.peopleArray.sorted(by: { $0.wins < $1.wins })
+        //AppData.peopleArray = AppData.peopleArray.sorted(by: { $0.wins < $1.wins })
+        
+        AppData.peopleArray = AppData.peopleArray.sorted(by: { (a: person, b: person) -> Bool in
+            return a.wins > b.wins
+        })
 
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(AppData.peopleArray) {
+            AppData.defaults.set(encoded, forKey: "peopleSet")
+        }
+        
         tableViewOutlet.reloadData()
     }
     
 
+    @IBAction func sortByNameAction(_ sender: Any) {
+        
+        AppData.peopleArray = AppData.peopleArray.sorted(by: { (a: person, b: person) -> Bool in
+            return a.name > b.name
+        })
+
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(AppData.peopleArray) {
+            AppData.defaults.set(encoded, forKey: "peopleSet")
+        }
+        
+        tableViewOutlet.reloadData()
+    }
+    
+    
     /*
     // MARK: - Navigation
 
