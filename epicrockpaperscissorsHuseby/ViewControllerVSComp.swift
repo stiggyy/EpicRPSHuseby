@@ -157,6 +157,10 @@ class ViewControllerVSHuman: UIViewController {
         playerChoiceOutlet.text = "Player One's Choice:"
         playertwoOutlet.text = "Pick player two"
         playerOneOutlet.text = "Pick player one"
+        playerOneChoseOutlet.text = "Player one chose:"
+        playerTwoChoseOutlet.text = "Player two chose: "
+        winnerOutlet.text = "Winner: "
+
         
     }
     
@@ -173,6 +177,7 @@ class ViewControllerVSHuman: UIViewController {
         AppData.playerTwoName = ""
         AppData.indexOne = 0
         AppData.indexTwo = 0
+        
     }
     
     func decideWhoWon(){

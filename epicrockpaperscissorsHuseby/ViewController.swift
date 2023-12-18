@@ -45,6 +45,7 @@ struct RPSchoice: Codable{
     
 }
 class AppData: Codable {
+    static var playerName = "Player"
     static var playable = false
     static var indexOne = 0
     static var indexTwo = 0
@@ -141,17 +142,33 @@ class ViewController: UIViewController {
     
 
     func decideWhoWon(){
+        
+        var pin = 0
+        for x in AppData.peopleArray{
+            if x.name == AppData.playerName {
+                break
+            }
+            pin = pin + 1
+        }
+        
+        var cin = 0
+        for x in AppData.peopleArray{
+            if x.name == "Computer" {
+                break
+            }
+            cin = cin + 1
+        }
         if playerwins {
-            AppData.peopleArray[0].addWin()
-            AppData.peopleArray[1].addLoss()
+            AppData.peopleArray[pin].addWin()
+            AppData.peopleArray[cin].addLoss()
             winnerLabel.text = "You won!"
         } else if vswins {
-            AppData.peopleArray[1].addWin()
-            AppData.peopleArray[0].addLoss()
+            AppData.peopleArray[cin].addWin()
+            AppData.peopleArray[pin].addLoss()
             winnerLabel.text = "Computer won!"
         } else {
-            AppData.peopleArray[0].addTie()
-            AppData.peopleArray[1].addTie()
+            AppData.peopleArray[pin].addTie()
+            AppData.peopleArray[cin].addTie()
             winnerLabel.text = "Tie!"
         }
         

@@ -74,10 +74,18 @@ class ViewControllerSettings: UIViewController, UITableViewDelegate, UITableView
     
     
     @IBAction func changeNameAction(_ sender: Any) {
+        var playerIndex = 0
+        for x in AppData.peopleArray{
+            if x.name == "Player" {
+                break
+            }
+            playerIndex = playerIndex + 1
+        }
         let name = nameOutlet.text
         nameOutlet.text = ""
         if let x = name {
-            AppData.peopleArray[0].changeName(x)
+            AppData.peopleArray[playerIndex].changeName(x)
+            AppData.playerName = x
         }
         
         let encoder = JSONEncoder()

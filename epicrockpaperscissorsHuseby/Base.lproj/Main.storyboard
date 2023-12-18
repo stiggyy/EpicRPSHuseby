@@ -94,7 +94,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RDI-7b-jrm">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="mR2-D0-MRI">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="AfA-3m-VlQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="AfA-3m-VlQ">
                                 <rect key="frame" x="16" y="5" width="152" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -543,6 +543,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="vGY-r3-50k"/>
         <segue reference="tSM-GE-tQd"/>
     </inferredMetricsTieBreakers>
     <resources>

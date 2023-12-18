@@ -19,7 +19,7 @@ class ViewControllerChoosePlayer: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         tableViewOutlet.dataSource = self
         tableViewOutlet.delegate = self
-        peopleNoComputer.remove(at: 1)
+      //  peopleNoComputer.remove(at: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,8 +30,10 @@ class ViewControllerChoosePlayer: UIViewController, UITableViewDelegate, UITable
             
             if x.name == "Computer" {
                 break
+            } else {
+                y = y + 1
             }
-            y = y + 1
+            
         }
         peopleNoComputer.remove(at: y)
         
@@ -51,25 +53,31 @@ class ViewControllerChoosePlayer: UIViewController, UITableViewDelegate, UITable
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goBack", sender: self)
         
-        if indexPath.row != 0 {
-            AppData.index = indexPath.row + 1
-        } else {
-            AppData.index = indexPath.row
+        var i = 0
+        for x in peopleNoComputer{
+            if x.name == AppData.peopleArray[indexPath.row].name {
+                break
+            }
+            i = i + 1
+            
         }
+        AppData.index = i
+        
         if AppData.playerChoosing == 1 {
-            AppData.playerOneName = AppData.peopleArray[AppData.index].name
-            AppData.indexOne = AppData.index
+            AppData.playerOneName = AppData.peopleArray[i].name
+            AppData.indexOne = i
             
         } else {
-            AppData.playerTwoName = AppData.peopleArray[AppData.index].name
-            AppData.indexTwo = AppData.index
+            AppData.playerTwoName = AppData.peopleArray[i].name
+            AppData.indexTwo = i
             
             AppData.playable = true
             
             AppData.playerChoosing = 1
         }
+        
+        performSegue(withIdentifier: "goBack", sender: self)
        // AppData.index = indexPath.row
     }
     

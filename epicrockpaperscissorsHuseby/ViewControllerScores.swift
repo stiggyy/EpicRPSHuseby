@@ -49,10 +49,7 @@ class ViewControllerScores: UIViewController, UITableViewDelegate, UITableViewDa
             return a.wins > b.wins
         })
 
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(AppData.peopleArray) {
-            AppData.defaults.set(encoded, forKey: "peopleSet")
-        }
+      
         
         tableViewOutlet.reloadData()
     }
