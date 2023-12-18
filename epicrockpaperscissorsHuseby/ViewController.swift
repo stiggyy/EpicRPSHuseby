@@ -60,6 +60,37 @@ class AppData: Codable {
 }
 
 class ViewController: UIViewController {
+    
+// Programing:
+// Variables & constants
+// Operators (+,-,/,*,%, &&, ||)
+// if/else
+// While loops/for loops
+// Switch statements
+// Arrays
+// Functions
+    // Classes
+    //Safely unwrapping
+ //   nil coalescing
+
+//Persistence with User Defaults
+
+//UI Design:
+    // Textfield
+ //   Button
+  //  Label
+    // segment controller
+    //Textview
+   // Stackview
+  //  Tableview
+    //Navigation Controller
+ //   View Controller
+ //   Alert Controller
+  //  Tab bar controller
+
+
+
+
 
     var playerwins = false
     var vswins = false
